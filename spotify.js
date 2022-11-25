@@ -16,6 +16,8 @@ function rewind(){
     socket.send(JSON.stringify({type: "PLAYER_REWIND", session: session}))
 }
 
+
+
 function pause(){
 
     if(paused == false)
@@ -41,7 +43,11 @@ function pause(){
 window.onload = function(){
 
 
+ document.getElementById("playButton2").onclick = function(){
+        socket.send(JSON.stringify({type: "SONG_CHANGE", session: session, uri: linkToUri(document.getElementById("trackUri").value)}))
 
+
+      }
 
     
     document.getElementById("connectButton").onclick = function(){
