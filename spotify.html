@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <script src="spotify.js"></script>
+        <title>Spotify Controller</title>
+    </head>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+        body{
+            background-color: #121212;
+            color: white;
+            font-family: 'Poppins';
+        }
+        .wrapper {
+  display: flex;
+  background-color: #171717;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+.left {
+    display: flex;
+  flex: 0 0 120px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 0 0 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.songName{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.songArtist{
+    font-size: 16px;
+    color: rgb(205, 205, 205);
+}
+
+.controls{
+    flex:1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+ 
+   
+}
+
+.extraspace{
+    flex: 0 0 420px;
+}
+
+.control{
+    font-size: 25px;
+    transition: all .3s ease;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
+.control:hover{
+    color:rgb(93, 14, 220)
+}
+    </style>
+    <body>
+        
+
+        Session ID: <input id="sessionId" type="text">
+        <button id="connectButton">Connect</button>
+        <br><br>
+            <div class="wrapper">
+                <div class="left">
+                    <img style="width: 100px; height:100px; border-radius:10px;" id="coverArt">
+                </div>
+                <div class="right">
+                    <label id="songName" class="songName"></label>
+                    <label id="songArtist" class="songArtist"></label>
+                </div><br>
+                <div class="controls">
+                    <label onclick="rewind()" class="control" style="padding: 10px;"><i class="fa-solid fa-backward"></i></label>
+                    <button id="pauseButton" onclick="pause()" class="control"><i class="fa-solid fa-pause"></i></button>
+                    <label onclick="skip()" class="control" style="padding: 10px;"><i class="fa-solid fa-forward"></i></label>
+                </div>
+                <div class="extraspace">
+
+                </div>
+            </div>
+       
+
+    </body>
+</html>
